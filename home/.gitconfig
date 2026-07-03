@@ -1,0 +1,5 @@
+[user]
+	name = Alon Bar-Lev
+	email = alon.barlev@gmail.com
+[init]
+	defaultBranch = master
