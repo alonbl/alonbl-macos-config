@@ -2,9 +2,9 @@
 
 > Status legend: ✅ Confirmed · ⚠️ Partially confirmed
 
----
+## Outlook
 
-### Outlook → No RTL/LTR Toggle Shortcut → System shortcut bypassed by web renderer ✅
+### No RTL/LTR Toggle Shortcut → System shortcut bypassed by web renderer ✅
 
 The new Outlook for Mac (2022+) is built on a web-stack renderer (WebKit/OWA)
 rather than native AppKit/NSTextView, so the macOS system shortcut
@@ -22,9 +22,7 @@ References:
 - https://support.microsoft.com/en-US/accessibility/word/keyboard-shortcuts-in-word
   — Microsoft keyboard shortcut reference; RTL/LTR toggle absent from Mac list
 
----
-
-### Outlook → Context-Based RTL/LTR Detection → Behaves randomly (unconfirmed)
+### Context-Based RTL/LTR Detection → Behaves randomly (unconfirmed)
 
 The auto-BiDi engine in the new Outlook for Mac, which infers paragraph
 direction from the first strongly-typed character, is reported to behave
@@ -32,9 +30,7 @@ inconsistently. This may interact with the lack of an explicit toggle
 shortcut (see above), as there is no way to override incorrect auto-detection.
 Status unconfirmed; the behaviour likely varies by Outlook build version.
 
----
-
-### Outlook → ESC in Full Screen → Closes window instead of only exiting full screen ✅
+### ESC in Full Screen → Closes window instead of only exiting full screen ✅
 
 Outlook intercepts the ESC key internally to dismiss dialogs and compose
 windows before macOS can process it as a full-screen exit event. The result
@@ -47,9 +43,7 @@ References:
 - https://support.apple.com/en-us/102650 — confirms Ctrl+Cmd+F as the macOS
   full-screen toggle shortcut
 
----
-
-### Outlook → New Window in Full Screen → Window cannot be moved ✅
+### New Window in Full Screen → Window cannot be moved ✅
 
 When Outlook is in full screen and a message is opened in a new window, the
 subsidiary window is rendered inside the full-screen Space without a proper
@@ -62,9 +56,9 @@ References:
 - https://developer.apple.com/documentation/appkit/nswindow — NSWindow
   documentation; correct style masks required for movable secondary windows
 
----
+## Word
 
-### Word → Home/End Keys → Navigate to document boundaries instead of line boundaries ✅
+### Home/End Keys → Navigate to document boundaries instead of line boundaries ✅
 
 Word for Mac maps Home and End to the beginning and end of the document
 respectively, adopting the macOS convention, while Word for Windows maps
@@ -90,9 +84,9 @@ References:
   — confirms DefaultKeyBinding.dict is ignored by cross-platform apps including Word
 - https://karabiner-elements.pqrs.org — HID-level key remapper; most reliable fix
 
----
+## Tasks
 
-### Tasks → Cmd-` Window Cycling → Fixed order, not LRU; no way to change ✅
+### Cmd-` Window Cycling → Fixed order, not LRU; no way to change ✅
 
 macOS cycles application windows with Cmd-` in a fixed creation/stacking order
 matching the Window menu. There is no built-in mechanism for LRU (most
@@ -106,9 +100,7 @@ References:
 - https://support.apple.com/en-us/102650 — confirms Cmd-` as window cycle
   shortcut; no LRU variant documented
 
----
-
-### Tasks → Desktop vs. Full Screen Window Targeting → App appears once in Cmd-Tab ✅
+### Desktop vs. Full Screen Window Targeting → App appears once in Cmd-Tab ✅
 
 macOS Cmd-Tab shows one entry per application regardless of how many windows
 that application has across different Spaces or full-screen Spaces. Switching
@@ -122,9 +114,9 @@ References:
 - https://support.apple.com/guide/mac-help/work-in-multiple-spaces-mh14112/mac
   — Apple Spaces guide; confirms one Cmd-Tab slot per app
 
----
+## Stage Manager
 
-### Stage Manager → Safari Window Assignment → Cannot assign to a stage without another app ⚠️
+### Safari Window Assignment → Cannot assign to a stage without another app ⚠️
 
 Stage Manager treats all windows of a single application as belonging to one
 stage entity. Dragging a Safari window onto a stage that contains only a
@@ -138,9 +130,7 @@ References:
 - https://support.apple.com/guide/mac-help/use-stage-manager-mchl534ba392/mac
   — official Stage Manager guide; describes grouping by dragging apps
 
----
-
-### Stage Manager → Keyboard Navigation → No keyboard shortcuts exist for any Stage Manager action ✅
+### Keyboard Navigation → No keyboard shortcuts exist for any Stage Manager action ✅
 
 Apple's Stage Manager documentation and the macOS keyboard shortcuts reference
 list zero keyboard shortcuts for Stage Manager — no shortcut to switch between
@@ -157,9 +147,7 @@ References:
 - https://support.apple.com/en-us/102650 — macOS keyboard shortcuts reference;
   zero Stage Manager entries
 
----
-
-### Stage Manager → Session Persistence → Stages are not restored after logout ✅
+### Session Persistence → Stages are not restored after logout ✅
 
 Stage Manager stores stage groupings only in memory. Logout, restart, or
 shutdown discards all group topology. The macOS "Reopen windows when logging
@@ -173,9 +161,7 @@ References:
 - https://support.apple.com/guide/mac-help/use-stage-manager-mchl534ba392/mac
   — no persistence mechanism mentioned in the official guide
 
----
-
-### Stage Manager → Drag and Drop → Staged applications do not accept drops ✅
+### Drag and Drop → Staged applications do not accept drops ✅
 
 Only the center-stage (currently active) application participates in
 drag-and-drop. Applications shown in the left-side strip are rendered as
@@ -188,9 +174,9 @@ References:
 - https://support.apple.com/guide/mac-help/use-stage-manager-mchl534ba392/mac
   — confirms strip items are for switching only; no drag-to-strip described
 
----
+## Keyboard
 
-### Keyboard → Israeli Layout → SI-1452 layout installed but key mapping incorrect for some keys ⚠️
+### Israeli Layout → SI-1452 layout installed but key mapping incorrect for some keys ⚠️
 
 The macOS built-in Hebrew input sources (Hebrew, Hebrew QWERTY, Hebrew-PC) map
 punctuation characters but do not correspond to the physical key positions of
@@ -205,9 +191,9 @@ References:
 - https://github.com/ErezVolk/mac-hebrew-si-1452-2 — Mac Hebrew SI 1452-2
   keyboard layout; DMG installer and installation instructions
 
----
+## Safari
 
-### Safari → External Link Target → No control over which window receives external links ✅
+### External Link Target → No control over which window receives external links ✅
 
 When a link is opened from an external application (Mail, Slack, etc.), Safari
 uses internal heuristics to select a target window and exposes no user-facing
@@ -224,9 +210,7 @@ References:
   — Safari settings reference; no per-source link routing option documented
 - https://sindresorhus.com/velja — Velja URL router; rules-based link routing
 
----
-
-### Safari → Full Screen New Windows → New windows open as full-screen Spaces ✅
+### Full Screen New Windows → New windows open as full-screen Spaces ✅
 
 When Safari is in full-screen mode (occupying its own Space) and opens a new
 window — via Cmd+N, a link with target=_blank, or an external application —
@@ -236,16 +220,18 @@ apps spawn new windows as additional full-screen Spaces by default. The
 behaviour has been consistent across Ventura (13) through Tahoe (26). Using
 Safari in "Fill" mode (Fn+Ctrl+F / green button long-press → Fill) instead of
 true full screen prevents the cascade, as Fill-mode windows remain on the
-desktop Space.
+desktop Space. For example, clicking a link in Outlook activates the
+full-screen Safari and opens the link as a new tab there, rather than on
+the desktop.
 
 References:
 - https://support.apple.com/guide/mac-help/work-in-multiple-spaces-mh14112/mac
   — Apple Spaces guide; "If you use the app full screen, it appears in its
   own space"
 
----
+## Google Docs
 
-### Google Docs → RTL/LTR Shortcut → Ctrl+Shift+←/→ does not work on macOS ✅
+### RTL/LTR Shortcut → Ctrl+Shift+←/→ does not work on macOS ✅
 
 Google Docs provides Ctrl+Shift+→ (RTL) and Ctrl+Shift+← (LTR) to toggle
 paragraph direction, but these shortcuts do not work on macOS regardless of
