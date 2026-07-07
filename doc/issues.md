@@ -22,6 +22,27 @@ References:
 - https://support.microsoft.com/en-US/accessibility/word/keyboard-shortcuts-in-word
   — Microsoft keyboard shortcut reference; RTL/LTR toggle absent from Mac list
 
+### Paste Options Control → Accessible only via mouse click on a small icon ✅
+
+After pasting into an Outlook for Mac message, a small paste control icon
+appears at the bottom of the pasted text. Clicking it reveals paste options
+(Keep Source Formatting, Match Destination Formatting). On Mac this is
+exclusively a mouse/trackpad interaction — the icon must be clicked. The
+icon is easy to miss as it appears directly adjacent to or just below the
+pasted content and disappears on the next keystroke. Unlike Outlook for
+Windows, which uses Word as its email editor and inherits the Ctrl-after-paste
+keyboard shortcut to open the paste options menu via keyboard, no equivalent
+keyboard shortcut exists in Outlook for Mac. The Outlook for Mac keyboard
+shortcuts reference lists no shortcuts in its "Edit and format text" section.
+
+References:
+- https://support.microsoft.com/en-US/accessibility/outlook/mac/keyboard-shortcuts-in-outlook-for-mac
+  — Outlook for Mac keyboard shortcuts; "Edit and format text" section is
+  empty, confirming no paste options keyboard shortcut exists on Mac
+- https://support.microsoft.com/en-US/accessibility/outlook/keyboard-shortcuts-for-outlook
+  — Outlook for Windows keyboard shortcuts; signals that Mac has a separate,
+  different keyboard shortcut set
+
 ### Context-Based RTL/LTR Detection → Behaves randomly (unconfirmed)
 
 The auto-BiDi engine in the new Outlook for Mac, which infers paragraph
@@ -100,6 +121,23 @@ References:
 - https://support.apple.com/en-us/102650 — confirms Cmd-` as window cycle
   shortcut; no LRU variant documented
 
+### Cmd-Tab Scope → Cycles all Spaces, not current Space only ✅
+
+macOS Cmd-Tab cycles through all running applications across all Spaces and
+full-screen Spaces. There is no built-in option to restrict the switcher to
+the current Space. This makes it impossible to use Cmd-Tab as a within-Space
+workflow tool when apps are spread across multiple Spaces. Cmd-` cycles
+windows of the same application only. Third-party utilities Contexts
+(contexts.co) and Witch (manytricks.com/witch) replace Cmd-Tab with a
+Space-aware switcher that lists only apps and windows present on the current
+Space.
+
+References:
+- https://support.apple.com/en-us/102650 — macOS keyboard shortcuts reference;
+  Cmd-Tab documented as global app switcher with no per-Space scope option
+- https://contexts.co — Space-aware per-window switcher
+- https://manytricks.com/witch — Space-aware per-window switcher
+
 ### Desktop vs. Full Screen Window Targeting → App appears once in Cmd-Tab ✅
 
 macOS Cmd-Tab shows one entry per application regardless of how many windows
@@ -129,6 +167,24 @@ least one other application before dragging Safari to it improves reliability.
 References:
 - https://support.apple.com/guide/mac-help/use-stage-manager-mchl534ba392/mac
   — official Stage Manager guide; describes grouping by dragging apps
+
+### Recent Apps Strip → Only 5 recent groups shown; no scroll to reveal more ✅
+
+Stage Manager displays at most approximately 5 recent app groups in the left
+strip. Groups that have not been used recently are silently hidden with no
+visual indicator. Despite what intuition suggests, the strip is not scrollable
+— neither mouse wheel nor trackpad scroll gestures have any effect on it. This
+is a by-design limitation: Apple's official documentation describes the strip
+as showing "recently used apps" only, and mentions no mechanism to view or
+scroll through all open groups. To access apps not visible in the strip, use
+the Dock, Mission Control (F3 / Ctrl+↑), or Cmd+Tab. If a group becomes
+inaccessible via the strip, Mission Control is the only reliable way to reach
+it without quitting and relaunching apps.
+
+References:
+- https://support.apple.com/guide/mac-help/use-stage-manager-mchl534ba392/mac
+  — official Stage Manager guide; describes strip as "recently used apps" with
+  no scroll or "show all" mechanism documented
 
 ### Keyboard Navigation → No keyboard shortcuts exist for any Stage Manager action ✅
 
@@ -209,6 +265,28 @@ References:
 - https://support.apple.com/guide/safari/safari-settings-overview-sfri10642/mac
   — Safari settings reference; no per-source link routing option documented
 - https://sindresorhus.com/velja — Velja URL router; rules-based link routing
+
+### Tab Overview → No drag-to-reorder or swipe-to-close ✅
+
+Safari's tab overview (Shift-Cmd-\ or pinch-to-zoom out on a trackpad) shows
+all open tabs as a grid of cards. Two interactions that exist elsewhere are
+absent here: (1) tabs cannot be reordered by dragging within the overview grid
+— drag-to-reorder only works in the normal tab bar; (2) there is no
+swipe-left/right gesture to close a tab card, unlike Safari on iPhone/iPad
+where swiping a tab card in the tab overview dismisses it. On Mac the only way
+to close a tab from the overview is to click its × button. Apple's official
+"Keyboard shortcuts and gestures" reference for Safari on Mac lists the
+complete set of tab gestures and does not include either of these interactions
+for the tab overview.
+
+References:
+- https://support.apple.com/guide/safari/keyboard-shortcuts-and-gestures-cpsh003/mac
+  — Safari for Mac keyboard shortcuts and gestures reference; full tab action
+  set listed (Shift-Cmd-\ to show tab overview); no drag-to-reorder or
+  swipe-to-close gesture documented for the tab overview
+- https://osxdaily.com/2016/08/23/close-tabs-safari-iphone/ — confirms that
+  swipe-left on a tab card in the iPhone tab view closes it; feature absent
+  on Mac
 
 ### Full Screen New Windows → New windows open as full-screen Spaces ✅
 
