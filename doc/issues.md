@@ -230,6 +230,33 @@ References:
 - https://support.apple.com/guide/mac-help/use-stage-manager-mchl534ba392/mac
   — confirms strip items are for switching only; no drag-to-strip described
 
+## Mission Control
+
+### Window Management → No close or reorder of windows in Mission Control view ✅
+
+Mission Control (Ctrl+↑ or three-finger swipe up) shows all open windows as a
+birds-eye layout. Two window management actions that might be expected are
+absent: (1) windows cannot be closed from within Mission Control — no × button
+appears on window thumbnails and no keyboard shortcut closes a hovered window;
+clicking a window instead exits Mission Control and brings that window to the
+front, so the only way to close a window is to exit Mission Control, close it,
+then re-enter; (2) windows cannot be reordered or repositioned within the
+current Space's layout — the only supported drag action is moving a window to a
+different Space or full-screen app thumbnail in the Spaces bar at the top.
+Both limitations have been present since Mission Control replaced Exposé in
+OS X Lion (10.7, 2011); Exposé on Snow Leopard (10.6) did show hover-to-reveal
+× buttons on window thumbnails, a capability that was not carried over.
+
+References:
+- https://support.apple.com/guide/mac-help/view-open-windows-spaces-mission-control-mh35798/mac
+  — Apple's complete Mission Control documentation; full action set listed with
+  no mention of closing or reordering windows on the current Space
+- https://support.apple.com/en-us/102650 — macOS keyboard shortcuts reference;
+  Mission Control shortcuts listed with no close-window shortcut
+- https://apple.stackexchange.com/questions/402568/is-it-possible-to-close-windows-from-app-expos%c3%a9
+  — community confirmation that no close action exists in App Exposé/Mission
+  Control; describes the exit-close-reenter workaround
+
 ## Keyboard
 
 ### Israeli Layout → SI-1452 layout installed but key mapping incorrect for some keys ⚠️
