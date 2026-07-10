@@ -257,13 +257,19 @@ preference to control this behaviour. The Settings → Tabs → "Open pages in
 tabs instead of windows" option controls the window-vs-tab decision globally
 but does not determine which window or Tab Group receives the link. The
 behaviour can be unpredictable when multiple Safari windows or Tab Groups are
-open. Velja (sindresorhus.com/velja, requires macOS 26+) and the open-source
+open. Three workarounds exist: (1) safari-redirect (github.com/alonbl/safari-redirect)
+registers itself as the default browser, intercepts the URL Apple Event, and
+uses AppleScript (`make new document`) to always open the link in a new Safari
+window on the current desktop — lightweight, open-source, no rules needed;
+(2) Velja (sindresorhus.com/velja, requires macOS 26+) and (3) the open-source
 Browserosaurus intercept external link events and can route them to a specific
 browser window or profile.
 
 References:
 - https://support.apple.com/guide/safari/safari-settings-overview-sfri10642/mac
   — Safari settings reference; no per-source link routing option documented
+- https://github.com/alonbl/safari-redirect — proxy default browser; always
+  opens external links in a new Safari window on the current desktop
 - https://sindresorhus.com/velja — Velja URL router; rules-based link routing
 
 ### Tab Overview → No drag-to-reorder or swipe-to-close ✅
