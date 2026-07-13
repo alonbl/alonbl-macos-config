@@ -340,6 +340,36 @@ References:
   — Apple Spaces guide; "If you use the app full screen, it appears in its
   own space"
 
+## Terminal
+
+### Large Paste in Terminal → Hangs when pasted content exceeds 1024 bytes ✅
+
+When running a program that reads from stdin (e.g. `cat` without arguments) and
+pasting content longer than 1024 bytes via the clipboard (Cmd+V), the terminal
+hangs: input is accepted up to the `MAX_CANON` limit, the program waits for a
+line terminator to flush the buffer, and the OS refuses to enqueue more bytes
+until the buffer drains — a deadlock. `MAX_CANON` is a compile-time constant in
+the macOS/BSD kernel TTY line discipline (value: 1024) and cannot be changed at
+runtime via `sysctl` or `stty`. The hang resolves with Ctrl+C; the truncated
+portion of the paste is silently discarded. The canonical macOS workaround is
+`pbpaste`, which reads directly from the clipboard pasteboard and bypasses the
+TTY line discipline entirely.
+
+Validation:
+```
+getconf MAX_CANON          # prints 1024 — the hard per-line byte limit
+python3 -c "print('A'*1100, end='')" | pbcopy   # copy 1100-byte string
+cat                        # then Cmd+V → terminal hangs after 1024 bytes
+```
+
+References:
+- `getconf MAX_CANON` — POSIX utility to query the compile-time TTY constant;
+  returns 1024 on all macOS versions through Tahoe (26)
+- https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man4/tty.4.html
+  — macOS tty(4) man page; describes canonical mode and the MAX_CANON limit
+- `pbpaste(1)` man page — macOS clipboard tool; reads pasteboard directly,
+  no TTY buffer involved
+
 ## Google Docs
 
 ### RTL/LTR Shortcut → Ctrl+Shift+←/→ does not work on macOS ✅
