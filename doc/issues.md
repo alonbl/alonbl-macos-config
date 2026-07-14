@@ -217,6 +217,24 @@ References:
 - https://support.apple.com/guide/mac-help/use-stage-manager-mchl534ba392/mac
   — no persistence mechanism mentioned in the official guide
 
+### Cmd-` Window Cycling → Occasionally enters an infinite loop with no exit ✅
+
+Pressing Cmd-` (cycle through windows of the same application) sometimes enters
+an unbreakable loop under Stage Manager: the window switcher keeps flipping
+between windows of the application indefinitely, ignoring subsequent Cmd-`
+presses and all other keyboard input directed at the window. The only reliable
+escape is to force-quit or quit the application. The bug is intermittent and
+harder to reproduce without Stage Manager active, suggesting a Stage Manager
+window-tracking defect. No keyboard shortcut, mouse click, or Cmd-Tab away and
+back reliably interrupts the cycle once started.
+
+References:
+- https://support.apple.com/en-us/102650 — macOS keyboard shortcuts; documents
+  Cmd-` as the standard shortcut to cycle between windows of the same app
+- https://support.apple.com/guide/mac-help/use-stage-manager-mchl534ba392/mac
+  — Stage Manager guide; describes window switching; no mention of this failure
+  mode or recovery steps
+
 ### Drag and Drop → Staged applications do not accept drops ✅
 
 Only the center-stage (currently active) application participates in
