@@ -8,6 +8,7 @@ for x in \
 	~/.vimrc \
 	~/.zprofile \
 	~/.zshrc \
+	~/.minirc.dfl \
        ; do
 	cp -r "${x}" "${SCRIPTDIR}"/home/
 done
