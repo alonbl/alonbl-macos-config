@@ -358,6 +358,29 @@ References:
   — Apple Spaces guide; "If you use the app full screen, it appears in its
   own space"
 
+### App Exposé Phantom Window ("Feature Flags") → Safari/macOS 27 regression ✅
+
+On macOS 27 with Safari 27, App Exposé (swipe down / Control+↓ on Safari)
+can show an extra phantom entry labeled "Feature Flags" that doesn't map to a
+normal visible Safari browsing window. This behavior reproduces even without
+any wrapper/proxy app: if two Safari windows are opened manually, one moved to
+another desktop/Space, then App Exposé is opened from certain Safari windows,
+the phantom entry appears. Because the issue is reproducible with plain Safari
+manual workflow, it is not caused by `safari-redirect` and should be treated
+as an external Safari/macOS regression.
+
+Validation:
+- Open two Safari windows manually.
+- Move one Safari window to another desktop/Space.
+- Focus either Safari window and open App Exposé (swipe down / Control+↓).
+- Observe an extra "Feature Flags" entry among Safari windows.
+
+References:
+- https://support.apple.com/guide/mac-help/view-open-windows-spaces-mission-control-mh35798/mac
+  — Mission Control / App Exposé behavior reference
+- https://support.apple.com/guide/mac-help/work-in-multiple-spaces-mh14112/mac
+  — Spaces behavior reference used in repro
+
 ## Terminal
 
 ### Large Paste in Terminal → Hangs when pasted content exceeds 1024 bytes ✅
