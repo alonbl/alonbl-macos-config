@@ -11,3 +11,5 @@ export GREP_COLOR='1;32'
 export LESS='-RX'
 
 alias diff='diff --color=auto'
+
+export PATH="/opt/homebrew/opt/rustup/bin:${PATH}"
