@@ -1,4 +1,4 @@
-# sudo integration
+# arm cross
 
 ## brew
 
