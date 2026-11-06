@@ -1,0 +1,38 @@
+{
+  "$schema" : "schema.json",
+  "appExceptions" : [
+    {
+      "bundleID" : "com.apple.finder",
+      "hide" : "whenNoWindows",
+      "ignore" : "never"
+    }
+  ],
+  "boldSelectedLabel" : true,
+  "browserTabPreviews" : false,
+  "clickOutsideToDismiss" : false,
+  "expandBrowserTabsAsWindows" : false,
+  "expandTabsAsWindows" : false,
+  "experimentalBrowserTabPreviews" : false,
+  "experimentalLivePreviews" : true,
+  "hideFromScreenSharing" : true,
+  "hoverActionsEnabled" : true,
+  "layoutMode" : "iconDock",
+  "letterHintsEnabled" : false,
+  "livePreviews" : true,
+  "mouseClickSelectionEnabled" : true,
+  "mouseHoverSelectionEnabled" : false,
+  "nextScopedShortcutID" : 0,
+  "previewTitleAlignment" : "center",
+  "revealDelayMs" : 40,
+  "scopedShortcutList" : [
+
+  ],
+  "scrollToSwitch" : false,
+  "shiftTapStepsBackward" : false,
+  "showApplicationNames" : false,
+  "showBrowserIconOnTabs" : true,
+  "showWindowStatusIcons" : true,
+  "showWindowTitleLabel" : true,
+  "sortOrder" : "mruWindows",
+  "tabDrillEnabled" : false
+}
